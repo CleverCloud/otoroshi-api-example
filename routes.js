@@ -14,5 +14,14 @@ export async function createRoute(url, user, secret) {
     }
 
     const route = await template.json();
-    console.log(route);
+
+    route.backend.root = '/api';
+    route.backend.targets = [
+      {
+        "hostname": "example.com",
+        "port": 443,
+        "tls": true,
+      }
+    ];
+
 }
