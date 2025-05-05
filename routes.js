@@ -35,4 +35,18 @@ export async function createRoute(url, user, secret) {
       }
     });
 
+    const response = await fetch(`${url}/api/routes`, {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Basic ' + Buffer.from(`${user}:${secret}`).toString('base64'),
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(route),
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`${response.status} ${errorText}, route creation failed`);
+    }
+    return response.json();
 }
