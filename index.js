@@ -1,4 +1,5 @@
 import { createRoute } from './routes.js';
+import { createApiKey, getBearer } from './apikeys.js';
 import { input, password } from '@inquirer/prompts';
 
 try {
