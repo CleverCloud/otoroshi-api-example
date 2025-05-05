@@ -24,4 +24,15 @@ export async function createRoute(url, user, secret) {
       }
     ];
 
+    route.plugins.push({
+      "plugin": "cp:otoroshi.next.plugins.ApikeyCalls",
+      config: {
+        "mandatory": true,
+        "pass_with_user": false,
+        "update_quotas": true,
+        "validate": true,
+        "wipe_backend_request": true,
+      }
+    });
+
 }
