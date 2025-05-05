@@ -57,3 +57,19 @@ export async function createApiKey(url, user, secret, route) {
 
   return response.json();
 }
+
+export async function getBearer(url, user, secret, apiKeyId) {
+  const response = await fetch(`${url}/api/apikeys/${apiKeyId}/bearer`, {
+    headers: {
+      'Authorization': 'Basic ' + Buffer.from(`${user}:${secret}`).toString('base64')
+    }
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`${response.status} ${errorText}, getting api key bearer token failed`);
+  }
+
+  const result = await response.json();
+  return result.bearer;
+}
