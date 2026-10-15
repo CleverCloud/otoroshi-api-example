@@ -1,16 +1,19 @@
 {
   "name": "otoroshiapiaccess",
   "version": "1.0.0",
-  "description": "",
+  "description": "Create an Otoroshi route and API key through the Otoroshi admin API (Clever Cloud example)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@inquirer/prompts": "^7.5.0"
+    "@inquirer/prompts": "^8.7.2"
+  },
+  "engines": {
+    "node": ">=24"
   }
 }
