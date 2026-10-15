@@ -1,5 +1,3 @@
-![Logo Clever Cloud](./assets/clever-cloud-logo.png)
-
 # Manage an Otoroshi API gateway on Clever Cloud through its admin API
 [![Clever Cloud - PaaS](https://img.shields.io/badge/Clever%20Cloud-PaaS-orange)](https://clever-cloud.com)
 
